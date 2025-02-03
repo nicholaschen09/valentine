@@ -8,6 +8,7 @@ export default function Home() {
   const [noButtonPosition, setNoButtonPosition] = useState({ top: 0, left: 0 });
 
   const handleYesClick = () => {
+    setNoButtonPosition({ top: 0, left: 0 });
     const audio = document.getElementById("song") as HTMLAudioElement;
     if (audio) {
       audio.play();
