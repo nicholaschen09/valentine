@@ -165,7 +165,7 @@ export default function Home() {
                 className="text-5xl m-1"
                 style={{
                   position: "absolute",
-                  top: `${row * 40 + 300}px`, // Adjusted to position below the text
+                  top: `${row * 40 + 350}px`, // Adjusted to position below the text
                   left: `${col * 50 + 50}px`,
                   animation: `fadeIn 0.5s ease-in-out ${index * 0.1}s forwards`,
                 }}
