@@ -83,7 +83,7 @@ export default function Home() {
           className="text-9xl font-bold mb-4 ml-10"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
-          Will you be my valentines?
+          Will you be my valentine?
         </h1>
         <p
           className="text-2xl font-semibold"
