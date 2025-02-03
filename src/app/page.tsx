@@ -133,6 +133,27 @@ export default function Home() {
             ♥
           </h1>
         </div>
+        
+      {yesClicked && (
+  <div
+    className="absolute top-10 right-20" 
+    style={{ maxWidth: "250px", maxHeight: "300px" }}
+  >
+    <p
+      className="text-3xl font-bold"
+      style={{
+        padding: "10px",
+        textAlign: "center"
+      }}
+    >
+      "Every moment with you feels like a beautiful song, one I want to play forever"
+    </p>
+  </div>
+)}
+
+
+
+        
         {/* Render hearts in grid pattern below the "Will you be my valentines?" text */}
         <div className="flex flex-wrap justify-center mt-16">
           {hearts.map((heart, index) => {
