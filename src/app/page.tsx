@@ -6,8 +6,10 @@ import confetti from "canvas-confetti"; // Import confetti from the canvas-confe
 export default function Home() {
   const [songPlaying, setSongPlaying] = useState(false);
   const [noButtonPosition, setNoButtonPosition] = useState({ top: 0, left: 0 });
+  const [yesClicked, setYesClicked] = useState(false);
 
   const handleYesClick = () => {
+    setYesClicked(true);
     setNoButtonPosition({ top: 0, left: 0 });
     const audio = document.getElementById("song") as HTMLAudioElement;
     if (audio) {
@@ -23,7 +25,8 @@ export default function Home() {
     }
   };
 
- const handleNoClick = () => {
+  const handleNoClick = () => {
+   if (yesClicked) return;
     // Generate a new position that avoids overlapping with the "Yes" button and keeps away from the heart.
     const newTop = Math.floor(Math.random() * 200) - 100;
     const newLeft = Math.floor(Math.random() * 100); // only positive offsets, max 100px
@@ -60,6 +63,12 @@ export default function Home() {
         >
           Will you be my valentines?
         </h1>
+        <p
+          className="text-2xl font-semibold"
+          style={{ fontFamily: "'Inter', sans-serif" }}
+        >
+          {`February 14`}
+        </p>
         <div className="flex space-x-4 mb-8 mt-12">
           <button
             className="px-6 py-3 text-3xl font-bold bg-green-500 text-white rounded"
@@ -89,19 +98,19 @@ export default function Home() {
           </p>
         )}
         <audio id="song" src="/lover.mp3" preload="auto" />
-       <div className="w-full flex justify-end mt-10">
-  <h1
-    className="text-9xl font-bold"
-    style={{
-      fontFamily: "'Inter', sans-serif",
-      transform: "scale(4)",
-      transformOrigin: "right",
-      pointerEvents: "none" // makes the heart unclickable
-    }}
-  >
-    ♥
-  </h1>
-</div>
+        <div className="w-full flex justify-end mt-10">
+          <h1
+            className="text-9xl font-bold"
+            style={{
+              fontFamily: "'Inter', sans-serif",
+              transform: "scale(4)",
+              transformOrigin: "right",
+              pointerEvents: "none" // makes the heart unclickable
+            }}
+          >
+            ♥
+          </h1>
+        </div>
       </div>
     </>
   );
